@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyfp0nh4ygew"]
+
+[ext_resource type="Script" path="res://scripts/entities/Player.gd" id="1_o11mx"]
+[ext_resource type="Script" path="res://scripts/CameraLookAhead.gd" id="2_tkxdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv05r"]
+size = Vector2(16, 48)
+
+[node name="Player" type="CharacterBody2D"]
+floor_snap_length = 14.0
+script = ExtResource("1_o11mx")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = 24.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mv05r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_tkxdl")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://81j2epkoxa2k"]
+
+[ext_resource type="Script" path="res://scripts/backgrounds/Fan.gd" id="1_hentl"]
+[ext_resource type="Texture2D" uid="uid://canhuqxqxeaya" path="res://textures/backgrounds/fan_blades.png" id="1_i53cn"]
+[ext_resource type="Texture2D" uid="uid://bbbc85ic2ownp" path="res://textures/backgrounds/fan_center.png" id="2_dpsbw"]
+[ext_resource type="AudioStream" uid="uid://bhtwyc4j21uoy" path="res://fans.ogg" id="4_41cs4"]
+[ext_resource type="Material" uid="uid://b1tknuuiu3g40" path="res://unshaded_material.tres" id="4_n4tx0"]
+[ext_resource type="Texture2D" uid="uid://c3hbfoiwevcge" path="res://textures/backgrounds/fan_lights.png" id="5_r1e6e"]
+
+[node name="Fan" type="Node2D" node_paths=PackedStringArray("fan_blades", "lights")]
+script = ExtResource("1_hentl")
+fan_blades = NodePath("FanBlades")
+max_speed = 1.2
+lights = NodePath("FanLights")
+
+[node name="FanBlades" type="Sprite2D" parent="."]
+rotation = 6.28319
+texture = ExtResource("1_i53cn")
+
+[node name="FanCenter" type="Sprite2D" parent="."]
+texture = ExtResource("2_dpsbw")
+
+[node name="FanLights" type="Sprite2D" parent="."]
+material = ExtResource("4_n4tx0")
+texture = ExtResource("5_r1e6e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_41cs4")
+autoplay = true
+max_distance = 2e+09

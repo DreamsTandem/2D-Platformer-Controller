@@ -1,0 +1,26 @@
+CONTROLS
+	✔Basic Run
+		✔Smooth Movement (Get_Axis); will handle Acceleration, Deceleration, Max Speed, and Turn Speed in one method
+		✔Moving Platform Handler
+	✔Basic Jump
+		✔Air Control (Weaker Get_Axis); will also handle Air Acceleration, Air Control, and Air Breaking in one method
+		✔Variable Jump Height
+		✔Lower Up Gravity
+		✔Higher Down Gravity
+		✔Coyote Time
+		✔Jump Buffer
+		✔Terminal Velocity
+CAMERA
+	Dampening
+	Lookahead
+VFX
+	Particles
+		Run
+		Jump
+		Land
+	Squash and Stretch
+		Jump
+		Land
+	Lean
+		Angle
+		Speed
